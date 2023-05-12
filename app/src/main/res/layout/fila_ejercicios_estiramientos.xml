@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/nombreEjerEstir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nombre"
+            android:textSize="30dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/descripcionEjerEstir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="descripcion"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/grupoEjerEstir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="grupo"
+            android:layout_gravity="bottom"
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/imagenEjerEstir"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

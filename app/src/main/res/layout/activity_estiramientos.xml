@@ -21,6 +21,7 @@
             android:layout_margin="5dp">
 
             <Spinner
+                android:id="@+id/spnGruposEstiramientos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
@@ -29,7 +30,7 @@
 
 
             <ListView
-                android:id="@+id/listaEjercicios"
+                android:id="@+id/listaEstiramientos"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10sp"/>
