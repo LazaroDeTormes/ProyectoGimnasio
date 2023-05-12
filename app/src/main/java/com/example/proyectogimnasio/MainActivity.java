@@ -47,14 +47,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        Intent i;
         switch (v.getId()){
             case R.id.rutinaHoyBtn:
                 break;
             case R.id.ejerciciosBtn:
-                Intent i = new Intent(this, Ejercicios.class);
+                i = new Intent(this, Ejercicios.class);
                 startActivity(i);
                 break;
             case R.id.estiramientosBtn:
+                i = new Intent(this, estiramientos.class);
+                startActivity(i);
                 break;
             case R.id.crearRutinaBtn:
                 break;
