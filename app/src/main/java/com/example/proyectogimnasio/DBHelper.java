@@ -74,6 +74,34 @@ public class DBHelper extends SQLiteAssetHelper {
         return arrayList;
     }
 
+    public ArrayList<EjerEstir> getBusquedaEjer(String busqueda){
+        ArrayList<EjerEstir> arrayList = new ArrayList<>();
+        String[] datos = {"id", "nombre", "descripcion", "grupo", "imagen"};
+        try{
+            SQLiteDatabase bbdd = getReadableDatabase();
+            if (bbdd != null){
+                Cursor buscar = bbdd.query("ejercicios", datos, "nombre="+busqueda, null, null, null, null, null);
+                if (buscar.getCount()!=0){
+                    while (buscar.moveToNext()){
+                        String nombre = buscar.getString(1);
+                        String descripcion = buscar.getString(2);
+                        String grupo = buscar.getString(3);
+                        arrayList.add(new EjerEstir(nombre, descripcion, grupo));
+                    }
+                    return arrayList;
+                }
+            }else {
+
+                return arrayList;
+            }
+        }catch (Exception e){
+            Toast.makeText(context, "No se han encontrado resultados", Toast.LENGTH_SHORT).show();
+        }
+
+        return arrayList;
+
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         super.onUpgrade(db, oldVersion, newVersion);
