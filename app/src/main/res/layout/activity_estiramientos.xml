@@ -20,17 +20,17 @@
             android:background="@color/white"
             android:layout_margin="5dp">
 
-            <EditText
-                android:id="@+id/buscadorEjercicios"
+            <Spinner
+                android:id="@+id/spnGruposEstiramientos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="5dp"
-                android:hint="Busca un ejercicio"/>
+                android:layout_marginVertical="5dp"/>
+
 
 
             <ListView
-                android:id="@+id/listaEjercicios"
+                android:id="@+id/listaEstiramientos"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10sp"/>
