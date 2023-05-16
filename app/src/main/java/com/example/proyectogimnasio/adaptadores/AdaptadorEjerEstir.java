@@ -1,7 +1,6 @@
-package com.example.proyectogimnasio;
+package com.example.proyectogimnasio.adaptadores;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.proyectogimnasio.R;
+import com.example.proyectogimnasio.pojos.EjerEstir;
+
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 public class AdaptadorEjerEstir extends ArrayAdapter {
 

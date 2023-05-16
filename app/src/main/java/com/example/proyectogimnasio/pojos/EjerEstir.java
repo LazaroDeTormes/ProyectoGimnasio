@@ -1,13 +1,15 @@
-package com.example.proyectogimnasio;
+package com.example.proyectogimnasio.pojos;
 
 public class EjerEstir {
 
+    protected int id;
     protected String nombre;
     protected String descripcion;
     protected String grupo;
     protected String imagen;
 
-    public EjerEstir(String nombre, String descripcion, String grupo, String imagen) {
+    public EjerEstir(int id, String nombre, String descripcion, String grupo, String imagen) {
+        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.grupo = grupo;
@@ -18,6 +20,14 @@ public class EjerEstir {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.grupo = grupo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {

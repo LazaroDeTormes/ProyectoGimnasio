@@ -1,4 +1,4 @@
-package com.example.proyectogimnasio;
+package com.example.proyectogimnasio.pantallas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.example.proyectogimnasio.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
             case R.id.estiramientosBtn:
-                i = new Intent(this, estiramientos.class);
+                i = new Intent(this, Estiramientos.class);
                 startActivity(i);
                 break;
             case R.id.crearRutinaBtn:

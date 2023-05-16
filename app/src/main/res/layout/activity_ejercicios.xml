@@ -20,13 +20,14 @@
             android:background="@color/white"
             android:layout_margin="5dp">
 
-            <EditText
+            <AutoCompleteTextView
                 android:id="@+id/buscadorEjercicios"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="5dp"
-                android:hint="Busca un ejercicio"/>
+                android:hint="Busca un ejercicio"
+                android:singleLine="true"/>
 
 
             <ListView
