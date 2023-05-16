@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
+
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 import java.util.ArrayList;
@@ -28,9 +29,9 @@ public class DBHelper extends SQLiteAssetHelper {
                 Cursor buscar = bbdd.rawQuery("select * from ejercicios", null);
                 if (buscar.getCount()!=0){
                     while (buscar.moveToNext()){
-                        String nombre = buscar.getString(0);
-                        String descripcion = buscar.getString(1);
-                        String grupo = buscar.getString(2);
+                        String nombre = buscar.getString(1);
+                        String descripcion = buscar.getString(2);
+                        String grupo = buscar.getString(3);
                         arrayList.add(new EjerEstir(nombre, descripcion, grupo));
                     }
                     return arrayList;
@@ -55,9 +56,9 @@ public class DBHelper extends SQLiteAssetHelper {
                 Cursor buscar = bbdd.rawQuery("select * from estiramientos", null);
                 if (buscar.getCount()!=0){
                     while (buscar.moveToNext()){
-                        String nombre = buscar.getString(0);
-                        String descripcion = buscar.getString(1);
-                        String grupo = buscar.getString(2);
+                        String nombre = buscar.getString(1);
+                        String descripcion = buscar.getString(2);
+                        String grupo = buscar.getString(3);
                         arrayList.add(new EjerEstir(nombre, descripcion, grupo));
                     }
                     return arrayList;
