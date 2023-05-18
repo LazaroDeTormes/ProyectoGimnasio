@@ -32,7 +32,7 @@ public class AdaptadorEjerEstir extends ArrayAdapter {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        View fila =convertView;
+        View fila = convertView;
 
         AdaptadorEjerEstir.ViewHolder vh;
 
@@ -43,7 +43,6 @@ public class AdaptadorEjerEstir extends ArrayAdapter {
             fila = inflador.inflate(R.layout.fila_ejercicios_estiramientos, null);
 
             vh.nombre = fila.findViewById(R.id.nombreEjerEstir);
-            vh.descripcion = fila.findViewById(R.id.descripcionEjerEstir);
             vh.grupo = fila.findViewById(R.id.grupoEjerEstir);
             vh.imagen = fila.findViewById(R.id.imagenEjerEstir);
 
@@ -53,12 +52,10 @@ public class AdaptadorEjerEstir extends ArrayAdapter {
         }
 
         TextView nombre = fila.findViewById(R.id.nombreEjerEstir);
-        TextView descripcion = fila.findViewById(R.id.descripcionEjerEstir);
         TextView grupo = fila.findViewById(R.id.grupoEjerEstir);
         ImageView imagen = fila.findViewById(R.id.imagenEjerEstir);
 
         nombre.setText(ejerOestir.get(position).getNombre());
-        descripcion.setText(ejerOestir.get(position).getDescripcion());
         grupo.setText(ejerOestir.get(position).getGrupo());
         //imagen
 
@@ -67,7 +64,7 @@ public class AdaptadorEjerEstir extends ArrayAdapter {
     }
 
     public class ViewHolder{
-        TextView nombre, descripcion, grupo;
+        TextView nombre, grupo;
         ImageView imagen;
 
     }

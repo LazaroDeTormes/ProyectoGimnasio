@@ -20,12 +20,7 @@
             android:text="nombre"
             android:textSize="30dp"
             android:textStyle="bold"/>
-        <TextView
-            android:id="@+id/descripcionEjerEstir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="descripcion"
-            android:textSize="15dp"/>
+
         <TextView
             android:id="@+id/grupoEjerEstir"
             android:layout_width="wrap_content"

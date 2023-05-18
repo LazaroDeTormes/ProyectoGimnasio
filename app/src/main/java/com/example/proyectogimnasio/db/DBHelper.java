@@ -111,7 +111,7 @@ public class DBHelper extends SQLiteAssetHelper {
         try{
             SQLiteDatabase bbdd = getReadableDatabase();
             if (bbdd != null){
-                Cursor buscar = bbdd.query("estiramientos", datos, "nombre='"+busqueda+"'", null, null, null, null, null);
+                Cursor buscar = bbdd.query("estiramientos", datos, "grupo='"+busqueda+"'", null, null, null, null, null);
                 if (buscar.getCount()!=0){
                     while (buscar.moveToNext()){
                         String nombre = buscar.getString(1);

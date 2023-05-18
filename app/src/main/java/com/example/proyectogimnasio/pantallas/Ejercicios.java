@@ -1,25 +1,17 @@
 package com.example.proyectogimnasio.pantallas;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.method.KeyListener;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.proyectogimnasio.R;
 import com.example.proyectogimnasio.adaptadores.AdaptadorEjerEstir;
-import com.example.proyectogimnasio.adaptadores.AdapterAutocomplete;
 import com.example.proyectogimnasio.db.DBHelper;
 import com.example.proyectogimnasio.pojos.EjerEstir;
 
@@ -29,10 +21,11 @@ public class Ejercicios extends AppCompatActivity {
 
     private ListView listaEjer;
     private ArrayList<EjerEstir> ejercicios;
+    private ArrayList<String> nombres;
     private DBHelper dbh;
     private AutoCompleteTextView buscar;
     private AdaptadorEjerEstir adapter;
-    private AdapterAutocomplete adapterAutocomplete;
+    private ArrayAdapter<?> adapterAutocomplete;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,13 +37,21 @@ public class Ejercicios extends AppCompatActivity {
         dbh = new DBHelper(this);
 
         ejercicios = dbh.getAllEjercicios();
+        nombres = new ArrayList<>();
 
-        adapter = new AdaptadorEjerEstir(this, R.layout.fila_ejercicios_estiramientos, ejercicios);
-        adapterAutocomplete = new AdapterAutocomplete(this, android.R.layout.simple_dropdown_item_1line, ejercicios);
+        for (int i = 0; i < ejercicios.size(); i++){
+            nombres.add(ejercicios.get(i).getNombre());
+        }
+
+
+        recargarLista(ejercicios);
+
+        adapterAutocomplete = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, nombres);
 
 
 
-        listaEjer.setAdapter(adapter);
+
+        buscar.setThreshold(2);
         buscar.setAdapter(adapterAutocomplete);
 
         buscar.setOnKeyListener(new View.OnKeyListener() {
@@ -63,16 +64,31 @@ public class Ejercicios extends AppCompatActivity {
                     } else {
                         ejercicios = dbh.getAllEjercicios();
                     }
-
-                    adapter = new AdaptadorEjerEstir(Ejercicios.this, R.layout.fila_ejercicios_estiramientos, ejercicios);
-                    listaEjer.setAdapter(adapter);
+                    recargarLista(ejercicios);
                 }
                 return false;
             }
         });
 
+        buscar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String opcion = String.valueOf(buscar.getText());
+                ejercicios = dbh.getBusquedaEjer(opcion);
+                recargarLista(ejercicios);
+            }
+        });
 
 
+
+
+    }
+
+    public void recargarLista(ArrayList<EjerEstir> lista){
+
+        adapter = new AdaptadorEjerEstir(this, R.layout.fila_ejercicios_estiramientos, ejercicios);
+
+        listaEjer.setAdapter(adapter);
 
     }
 }
