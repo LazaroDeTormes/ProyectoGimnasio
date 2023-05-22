@@ -62,8 +62,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
             case R.id.crearRutinaBtn:
+                i = new Intent(this, CreaRutina.class);
+                startActivity(i);
                 break;
             case R.id.rutinasBtn:
+                i = new Intent(this, MisRutinas.class);
+                startActivity(i);
                 break;
         }
     }

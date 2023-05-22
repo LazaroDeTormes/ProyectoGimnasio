@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 
+import com.example.proyectogimnasio.Constantes;
 import com.example.proyectogimnasio.R;
 import com.example.proyectogimnasio.adaptadores.AdaptadorEjerEstir;
 import com.example.proyectogimnasio.db.DBHelper;
@@ -44,7 +45,7 @@ public class Estiramientos extends AppCompatActivity {
             grupos.add(estiramientos.get(i).getGrupo());
         }
 
-        recargarLista(estiramientos);
+        Constantes.recargarLista(this, adapter, estiramientos, listaEst);
 
         adaptadorSpn = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, grupos);
 
@@ -61,7 +62,7 @@ public class Estiramientos extends AppCompatActivity {
                 } else {
                     estiramientos = dbh.getAllEstiramientos();
                 }
-                recargarLista(estiramientos);
+                Constantes.recargarLista(Estiramientos.this, adapter, estiramientos, listaEst);
 
             }
 
@@ -74,11 +75,5 @@ public class Estiramientos extends AppCompatActivity {
 
     }
 
-    public void recargarLista(ArrayList<EjerEstir> lista){
 
-        adapter = new AdaptadorEjerEstir(this, R.layout.fila_ejercicios_estiramientos, estiramientos);
-
-        listaEst.setAdapter(adapter);
-
-    }
 }

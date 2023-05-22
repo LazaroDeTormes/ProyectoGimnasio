@@ -133,6 +133,41 @@ public class DBHelper extends SQLiteAssetHelper {
 
     }
 
+    public ArrayList<EjerEstir> getRutinaPorDia(String dia){
+        ArrayList<EjerEstir> rutina = new ArrayList<>();
+        String[] datos = {"id","ejercicio","dia"};
+        String[] datos2 = {"id", "nombre", "descripcion", "grupo", "imagen"};
+        try{
+
+            SQLiteDatabase bbdd = getReadableDatabase();
+            if (bbdd != null){
+                Cursor buscar = bbdd.query("rutinas", datos, "dia='"+dia+"'", null, null, null, null, null);
+                if (buscar.getCount()!=0){
+                    while (buscar.moveToNext()){
+                        String ejercicio = buscar.getString(1);
+                        Cursor buscarEjercicio = bbdd.query("ejercicios", datos2, "nombre='"+ejercicio+"'", null, null, null, null, null);
+                        if (buscarEjercicio.getCount()!=0){
+                            while (buscarEjercicio.moveToNext()){
+                                String nombre = buscar.getString(1);
+                                String descripcion = buscar.getString(2);
+                                String grupo = buscar.getString(3);
+                                rutina.add(new EjerEstir(nombre, descripcion, grupo));
+                            }
+                            return rutina;
+                        }
+                    }
+                    return rutina;
+                }
+            }else {
+                return rutina;
+            }
+
+        }catch (Exception e){
+            Toast.makeText(context, "No hay rutina para hoy", Toast.LENGTH_SHORT).show();
+        }
+        return rutina;
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         super.onUpgrade(db, oldVersion, newVersion);
