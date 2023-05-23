@@ -163,7 +163,7 @@ public class DBHelper extends SQLiteAssetHelper {
             }
 
         }catch (Exception e){
-            Toast.makeText(context, "No hay rutina para hoy", Toast.LENGTH_SHORT).show();
+            System.out.println(e);
         }
         return rutina;
     }

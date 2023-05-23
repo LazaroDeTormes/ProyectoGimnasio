@@ -17,12 +17,12 @@ import com.example.proyectogimnasio.pojos.EjerEstir;
 
 import java.util.ArrayList;
 
-public class AdaptadorEjerEstir extends ArrayAdapter {
+public class AdaptadorEjerRutina extends ArrayAdapter {
 
     private Activity contexto;
     private ArrayList<EjerEstir> ejerOestir;
 
-    public AdaptadorEjerEstir(Activity contexto, int layout, ArrayList<EjerEstir> ejerOestir) {
+    public AdaptadorEjerRutina(Activity contexto, int layout, ArrayList<EjerEstir> ejerOestir) {
         super(contexto, layout, ejerOestir);
         this.contexto = contexto;
         this.ejerOestir = ejerOestir;
@@ -35,31 +35,31 @@ public class AdaptadorEjerEstir extends ArrayAdapter {
 
         View fila = convertView;
 
-        AdaptadorEjerEstir.ViewHolder vh;
+        AdaptadorEjerRutina.ViewHolder vh;
 
-        vh = new AdaptadorEjerEstir.ViewHolder();
+        vh = new AdaptadorEjerRutina.ViewHolder();
 
         if (fila == null){
             LayoutInflater inflador = contexto.getLayoutInflater();
-            fila = inflador.inflate(R.layout.fila_ejercicios_estiramientos, null);
+            fila = inflador.inflate(R.layout.fila_ejercicios_rutina, null);
 
             vh.nombre = fila.findViewById(R.id.nombreEjerEstir);
             vh.grupo = fila.findViewById(R.id.grupoEjerEstir);
-            //vh.imagen = fila.findViewById(R.id.imagenEjerEstir);
+            vh.interruptor = fila.findViewById(R.id.anhadir);
 
             fila.setTag(vh);
         } else {
-            vh = (AdaptadorEjerEstir.ViewHolder) fila.getTag();
+            vh = (AdaptadorEjerRutina.ViewHolder) fila.getTag();
         }
 
         TextView nombre = fila.findViewById(R.id.nombreEjerEstir);
         TextView grupo = fila.findViewById(R.id.grupoEjerEstir);
-        //ImageView imagen = fila.findViewById(R.id.imagenEjerEstir);
+        Switch interruptor = fila.findViewById(R.id.anhadir);
 
         nombre.setText(ejerOestir.get(position).getNombre());
         grupo.setText(ejerOestir.get(position).getGrupo());
 
-        //imagen
+
 
         return fila;
 
@@ -67,6 +67,8 @@ public class AdaptadorEjerEstir extends ArrayAdapter {
 
     public class ViewHolder{
         TextView nombre, grupo;
-        ImageView imagen;
+        Switch interruptor;
+
     }
+
 }

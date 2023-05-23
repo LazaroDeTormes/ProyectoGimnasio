@@ -21,17 +21,28 @@
             android:layout_margin="5dp">
 
              <Spinner
+                 android:id="@+id/spnDia"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:layout_weight="0"
-                 android:layout_margin="10dp"/>
+                 android:layout_margin="10dp"
+                 android:entries="@array/dias"/>
 
 
             <ListView
                 android:id="@+id/listaRutina"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_margin="10sp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="Finalizar"
+                android:backgroundTint="@color/color1"
+                />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

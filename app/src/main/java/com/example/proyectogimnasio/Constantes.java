@@ -17,6 +17,7 @@ public class Constantes {
 
     public static void recargarLista(Activity contexto, AdaptadorEjerEstir adapter, ArrayList<EjerEstir> lista, ListView listaXML){
 
+
         adapter = new AdaptadorEjerEstir(contexto, R.layout.fila_ejercicios_estiramientos, lista);
 
         listaXML.setAdapter(adapter);
