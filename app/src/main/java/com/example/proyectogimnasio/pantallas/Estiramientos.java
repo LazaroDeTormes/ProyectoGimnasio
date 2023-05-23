@@ -39,7 +39,7 @@ public class Estiramientos extends AppCompatActivity {
 
         estiramientos = dbh.getAllEstiramientos();
         grupos = new ArrayList<>();
-        grupos.add("Todos");
+        grupos.add(getString(R.string.grupo_estir));
 
         for (int i = 0; i < estiramientos.size(); i++){
             grupos.add(estiramientos.get(i).getGrupo());
@@ -57,7 +57,7 @@ public class Estiramientos extends AppCompatActivity {
 
                 String eleccion = spn.getSelectedItem().toString();
 
-                if (eleccion != "Todos"){
+                if (!eleccion.equals(getString(R.string.grupo_estir))){
                     estiramientos = dbh.getBusquedaEstir(eleccion);
                 } else {
                     estiramientos = dbh.getAllEstiramientos();

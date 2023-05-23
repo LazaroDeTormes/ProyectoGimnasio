@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ProyectoGimnasio</string>
+    <string name="grupo_estir">Todos</string>
+    <string name="dia1">luns</string>
+    <string name="dia2">martes</string>
+    <string name="dia3">mércores</string>
+    <string name="dia4">xoves</string>
+    <string name="dia5">venres</string>
+    <string name="dia6">sábado</string>
+    <string name="dia7">domingo</string>
+    <string name="rutina_vacia">Rutina baleira</string>
+    <string name="sin_resultados">Non se encontraron resultados</string>
+</resources>

@@ -1,10 +1,13 @@
 package com.example.proyectogimnasio.db;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.proyectogimnasio.Constantes;
 import com.example.proyectogimnasio.pojos.EjerEstir;
@@ -16,6 +19,7 @@ import java.util.ArrayList;
 public class DBHelper extends SQLiteAssetHelper {
 
     private Context context;
+
 
     public DBHelper(Context context) {
         super(context, Constantes.NOMBRE_BBDD, null, Constantes.VERSION);
@@ -166,6 +170,14 @@ public class DBHelper extends SQLiteAssetHelper {
             System.out.println(e);
         }
         return rutina;
+    }
+
+    public void anhadirEjerRutina(String nombre, String dia){
+        SQLiteDatabase bbdd = getWritableDatabase();
+        ContentValues nuevoEjer = new ContentValues();
+        nuevoEjer.put("nombre", nombre);
+        nuevoEjer.put("dia", dia);
+        bbdd.insert("rutinas",null, nuevoEjer);
     }
 
     @Override

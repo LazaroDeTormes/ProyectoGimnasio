@@ -2,14 +2,14 @@
 <resources>
 
     <string-array name="dias">
-        <item>Selecciona un día…</item>
-        <item>lunes</item>
-        <item>martes</item>
-        <item>miércoles</item>
-        <item>jueves</item>
-        <item>viernes</item>
-        <item>sábado</item>
-        <item>domingo</item>
+        <item>Choose any day…</item>
+        <item>monday</item>
+        <item>tuesday</item>
+        <item>wednesday</item>
+        <item>thursday</item>
+        <item>friday</item>
+        <item>saturday</item>
+        <item>sunday</item>
     </string-array>
 
 </resources>

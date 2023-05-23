@@ -47,7 +47,7 @@ public class PrevRutina extends AppCompatActivity {
 
             listaRutina.setAdapter(adapter);
         } else {
-            Toast.makeText(this, "Rutina vacía", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.rutina_vacia), Toast.LENGTH_SHORT).show();
         }
 
 

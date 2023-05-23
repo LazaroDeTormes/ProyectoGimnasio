@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="dias">
+        <item>Selecciona un día…</item>
+        <item>luns</item>
+        <item>martes</item>
+        <item>mércores</item>
+        <item>xoves</item>
+        <item>venres</item>
+        <item>sábado</item>
+        <item>domingo</item>
+    </string-array>
+
+</resources>
