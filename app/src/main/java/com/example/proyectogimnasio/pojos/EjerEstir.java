@@ -61,4 +61,15 @@ public class EjerEstir {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
+
+    @Override
+    public String toString() {
+        return "EjerEstir{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", grupo='" + grupo + '\'' +
+                ", imagen='" + imagen + '\'' +
+                '}';
+    }
 }

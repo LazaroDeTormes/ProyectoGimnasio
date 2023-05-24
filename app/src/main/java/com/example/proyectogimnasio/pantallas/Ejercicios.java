@@ -33,7 +33,6 @@ public class Ejercicios extends AppCompatActivity {
     private AlertDialog.Builder ventana;
     private EjerEstir eleccion;
 
-    private static final int INFORMACION = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

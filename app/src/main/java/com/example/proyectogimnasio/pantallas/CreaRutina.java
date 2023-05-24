@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.example.proyectogimnasio.Constantes;
 import com.example.proyectogimnasio.R;
@@ -52,13 +53,19 @@ public class CreaRutina extends AppCompatActivity {
                 String rutdia = dia.getSelectedItem().toString();
                 System.out.println(listaRutina.getAdapter().getCount());
                 for (int i = 0; i < listaRutina.getAdapter().getCount(); i++){
-                    LayoutInflater inflador = getLayoutInflater();
-                    View view = inflador.inflate(R.layout.fila_ejercicios_rutina, null);
-                    Switch interruptor = view.findViewById(R.layout.fila_ejercicios_rutina);
-                    if (interruptor.isChecked()){
+                    boolean switchState =  adapter.getSwitchState(i);
+                    if (switchState){
                         EjerEstir ejercicio = (EjerEstir) listaRutina.getAdapter().getItem(i);
                         String nombre = ejercicio.getNombre();
-                        dbh.anhadirEjerRutina(nombre, rutdia);
+                        System.out.println(nombre);
+
+                        if (dbh.getRutinaPorDia(rutdia, nombre).isEmpty()){
+                            dbh.anhadirEjerRutina(nombre, rutdia);
+                        } else {
+                            Toast.makeText(CreaRutina.this, getString(R.string.ejercicioEnRutina), Toast.LENGTH_SHORT).show();
+                        }
+
+                        
                     }
                 }
             }

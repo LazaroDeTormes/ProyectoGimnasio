@@ -29,12 +29,13 @@ public class PrevRutina extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_prev_rutina);
+
+        listaRutina = findViewById(R.id.listaRutina);
 
         Intent i = getIntent();
 
         dia = i.getStringExtra("dia");
-
-        listaRutina = findViewById(R.id.listaRutina);
 
         dbh = new DBHelper(this);
 
@@ -42,10 +43,13 @@ public class PrevRutina extends AppCompatActivity {
 
 
         if (rutina.size()!=0){
+            System.out.println(rutina.size());
+            System.out.println(rutina.get(0).toString());
+
             adapter = new AdaptadorEjerEstir(this, R.layout.fila_ejercicios_estiramientos, rutina);
 
-
             listaRutina.setAdapter(adapter);
+
         } else {
             Toast.makeText(this, getString(R.string.rutina_vacia), Toast.LENGTH_SHORT).show();
         }

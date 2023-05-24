@@ -139,7 +139,7 @@ public class DBHelper extends SQLiteAssetHelper {
 
     public ArrayList<EjerEstir> getRutinaPorDia(String dia){
         ArrayList<EjerEstir> rutina = new ArrayList<>();
-        String[] datos = {"id","ejercicio","dia"};
+        String[] datos = {"id","nombre","dia"};
         String[] datos2 = {"id", "nombre", "descripcion", "grupo", "imagen"};
         try{
 
@@ -152,10 +152,45 @@ public class DBHelper extends SQLiteAssetHelper {
                         Cursor buscarEjercicio = bbdd.query("ejercicios", datos2, "nombre='"+ejercicio+"'", null, null, null, null, null);
                         if (buscarEjercicio.getCount()!=0){
                             while (buscarEjercicio.moveToNext()){
-                                String nombre = buscar.getString(1);
-                                String descripcion = buscar.getString(2);
-                                String grupo = buscar.getString(3);
+                                String nombre = buscarEjercicio.getString(1);
+                                String descripcion = buscarEjercicio.getString(2);
+                                String grupo = buscarEjercicio.getString(3);
                                 rutina.add(new EjerEstir(nombre, descripcion, grupo));
+                            }
+                            return rutina;
+                        }
+                    }
+                    return rutina;
+                }
+            }else {
+                return rutina;
+            }
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return rutina;
+    }
+
+    public ArrayList<EjerEstir> getRutinaPorDia(String dia, String nombre){
+        ArrayList<EjerEstir> rutina = new ArrayList<>();
+        String[] datos = {"id","nombre","dia"};
+        String[] datos2 = {"id", "nombre", "descripcion", "grupo", "imagen"};
+        try{
+
+            SQLiteDatabase bbdd = getReadableDatabase();
+            if (bbdd != null){
+                Cursor buscar = bbdd.query("rutinas", datos, "dia='"+dia+"' and nombre ='"+nombre+"'", null, null, null, null, null);
+                if (buscar.getCount()!=0){
+                    while (buscar.moveToNext()){
+                        String ejercicio = buscar.getString(1);
+                        Cursor buscarEjercicio = bbdd.query("ejercicios", datos2, "nombre='"+ejercicio+"'", null, null, null, null, null);
+                        if (buscarEjercicio.getCount()!=0){
+                            while (buscarEjercicio.moveToNext()){
+                                String nombrea = buscarEjercicio.getString(1);
+                                String descripcion = buscarEjercicio.getString(2);
+                                String grupo = buscarEjercicio.getString(3);
+                                rutina.add(new EjerEstir(nombrea, descripcion, grupo));
                             }
                             return rutina;
                         }

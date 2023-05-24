@@ -1,10 +1,12 @@
 package com.example.proyectogimnasio.adaptadores;
 
 import android.app.Activity;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -21,6 +23,7 @@ public class AdaptadorEjerRutina extends ArrayAdapter {
 
     private Activity contexto;
     private ArrayList<EjerEstir> ejerOestir;
+    private SparseBooleanArray switchStates = new SparseBooleanArray();
 
     public AdaptadorEjerRutina(Activity contexto, int layout, ArrayList<EjerEstir> ejerOestir) {
         super(contexto, layout, ejerOestir);
@@ -55,6 +58,16 @@ public class AdaptadorEjerRutina extends ArrayAdapter {
         TextView nombre = fila.findViewById(R.id.nombreEjerEstir);
         TextView grupo = fila.findViewById(R.id.grupoEjerEstir);
         Switch interruptor = fila.findViewById(R.id.anhadir);
+        boolean switchState = switchStates.get(position, false);
+
+        interruptor.setChecked(switchState);
+
+        interruptor.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                switchStates.put(position, isChecked);
+            }
+        });
 
         nombre.setText(ejerOestir.get(position).getNombre());
         grupo.setText(ejerOestir.get(position).getGrupo());
@@ -63,6 +76,10 @@ public class AdaptadorEjerRutina extends ArrayAdapter {
 
         return fila;
 
+    }
+
+    public boolean getSwitchState(int position) {
+        return switchStates.get(position, false);
     }
 
     public class ViewHolder{

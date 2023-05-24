@@ -10,4 +10,13 @@
     <string name="dia7">domingo</string>
     <string name="rutina_vacia">Rutina vacía</string>
     <string name="sin_resultados">No se han encontrado resultados</string>
+    <string name="finalizar">Finalizar</string>
+    <string name="frase_inicial">¡Bienvenido, fiera!</string>
+    <string name="rutina_hoy">Rutina de hoy</string>
+    <string name="ejercicios">Ejercicios</string>
+    <string name="estiramientos">Estiramientos</string>
+    <string name="crea_rutina">Crea tu rutina</string>
+    <string name="mis_rutinas">Mis rutinas</string>
+    <string name="busca">Busca un ejercicio...</string>
+    <string name="ejercicioEnRutina">Ya has puesto este ejercicio en este día.</string>
 </resources>

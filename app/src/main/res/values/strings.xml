@@ -15,6 +15,18 @@
 
     <string name="sin_resultados">No data found</string>
 
+    <string name="finalizar">Finish</string>
 
+    <string name="frase_inicial">Welcome, brah!</string>
+
+    <string name="rutina_hoy">Today\'s rutine</string>
+    <string name="ejercicios">Exercices</string>
+    <string name="estiramientos">Stretches</string>
+    <string name="crea_rutina">Create a rutine</string>
+    <string name="mis_rutinas">My rutines</string>
+
+    <string name="busca">Search an exercice...</string>
+
+    <string name="ejercicioEnRutina">You have already setted this exercise in this day.</string>
 
 </resources>

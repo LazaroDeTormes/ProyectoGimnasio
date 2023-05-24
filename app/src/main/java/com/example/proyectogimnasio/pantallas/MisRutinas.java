@@ -44,49 +44,56 @@ public class MisRutinas extends AppCompatActivity  implements View.OnClickListen
             case R.id.rutinaLunes:
                 i = new Intent(this, PrevRutina.class);
                 b = new Bundle();
-                b.putString("dia", "lunes");
+                b.putString("dia", lun.getText().toString());
+                System.out.println(lun.getText().toString());
                 i.putExtras(b);
                 startActivity(i);
                 break;
             case R.id.rutinaMartes:
                 i = new Intent(this, PrevRutina.class);
                 b = new Bundle();
-                b.putString("dia", "martes");
+                b.putString("dia", mar.getText().toString());
+                System.out.println(mar.getText().toString());
                 i.putExtras(b);
                 startActivity(i);
                 break;
             case R.id.rutinaMiercoles:
                 i = new Intent(this, PrevRutina.class);
                 b = new Bundle();
-                b.putString("dia", "miercoles");
+                b.putString("dia", mie.getText().toString());
+                System.out.println(mie.getText().toString());
                 i.putExtras(b);
                 startActivity(i);
                 break;
             case R.id.rutinaJueves:
                 i = new Intent(this, PrevRutina.class);
                 b = new Bundle();
-                b.putString("dia", "jueves");
+                b.putString("dia", jue.getText().toString());
+                System.out.println(jue.getText().toString());
                 i.putExtras(b);
                 startActivity(i);
                 break;
             case R.id.rutinaViernes:
                 i = new Intent(this, PrevRutina.class);
                 b = new Bundle();
-                b.putString("dia", "viernes");
+                b.putString("dia", vie.getText().toString());
+                System.out.println(vie.getText().toString());
                 i.putExtras(b);
                 startActivity(i);
                 break;
             case R.id.rutinaSabado:
                 i = new Intent(this, PrevRutina.class);
                 b = new Bundle();
-                b.putString("dia", "sabado");
+                b.putString("dia", sab.getText().toString());
+                System.out.println(sab.getText().toString());
                 i.putExtras(b);
                 startActivity(i);
                 break;
             case R.id.rutinaDomingo:
                 i = new Intent(this, PrevRutina.class);
                 b = new Bundle();
-                b.putString("dia", "domingo");
+                b.putString("dia", dom.getText().toString());
+                System.out.println(dom.getText().toString());
                 i.putExtras(b);
                 startActivity(i);
                 break;
