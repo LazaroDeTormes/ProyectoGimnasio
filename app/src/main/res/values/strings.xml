@@ -29,4 +29,6 @@
 
     <string name="ejercicioEnRutina">You have already setted this exercise in this day.</string>
 
+    <string name="rutinaActualizada">Rutine updated!</string>
+
 </resources>

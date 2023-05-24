@@ -157,7 +157,7 @@ public class DBHelper extends SQLiteAssetHelper {
                                 String grupo = buscarEjercicio.getString(3);
                                 rutina.add(new EjerEstir(nombre, descripcion, grupo));
                             }
-                            return rutina;
+
                         }
                     }
                     return rutina;
@@ -192,7 +192,7 @@ public class DBHelper extends SQLiteAssetHelper {
                                 String grupo = buscarEjercicio.getString(3);
                                 rutina.add(new EjerEstir(nombrea, descripcion, grupo));
                             }
-                            return rutina;
+
                         }
                     }
                     return rutina;

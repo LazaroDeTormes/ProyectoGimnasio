@@ -2,6 +2,8 @@ package com.example.proyectogimnasio.pantallas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -68,6 +70,12 @@ public class CreaRutina extends AppCompatActivity {
                         
                     }
                 }
+
+                Intent devolucion = new Intent();
+                devolucion.putExtra("resultado", getString(R.string.rutinaActualizada));
+                setResult(Activity.RESULT_OK, devolucion);
+                finish();
+
             }
         });
 

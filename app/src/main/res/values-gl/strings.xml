@@ -17,6 +17,7 @@
     <string name="estiramientos">Estiramentos</string>
     <string name="crea_rutina">Crea a túa rutina</string>
     <string name="mis_rutinas">Miñas rutinas</string>
-    <string name="busca">Busca un exercicio...</string>
+    <string name="busca">Busca un exercicio…</string>
     <string name="ejercicioEnRutina">Xa puxeches este exercicio neste día.</string>
+    <string name="rutinaActualizada">Rutina actualizada!</string>
 </resources>

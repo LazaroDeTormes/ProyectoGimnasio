@@ -43,8 +43,6 @@ public class PrevRutina extends AppCompatActivity {
 
 
         if (rutina.size()!=0){
-            System.out.println(rutina.size());
-            System.out.println(rutina.get(0).toString());
 
             adapter = new AdaptadorEjerEstir(this, R.layout.fila_ejercicios_estiramientos, rutina);
 

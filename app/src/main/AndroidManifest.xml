@@ -13,6 +13,13 @@
         android:theme="@style/Theme.ProyectoGimnasio"
         tools:targetApi="31">
         <activity
+            android:name=".pantallas.RutinaHoy"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".pantallas.CreaRutina"
             android:exported="false">
             <meta-data

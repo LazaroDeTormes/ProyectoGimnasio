@@ -2,12 +2,14 @@ package com.example.proyectogimnasio.pantallas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.proyectogimnasio.R;
 
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView imgTitulo;
     private LinearLayout pantallaPrincipal, pantBot;
     private Button btnRH, btnEj, btnEs, btnCR, btnRu;
+    private static final int RESPUESTA = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent i;
         switch (v.getId()){
             case R.id.rutinaHoyBtn:
+                i = new Intent(this, RutinaHoy.class);
+                startActivity(i);
                 break;
             case R.id.ejerciciosBtn:
                 i = new Intent(this, Ejercicios.class);
@@ -63,12 +68,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.crearRutinaBtn:
                 i = new Intent(this, CreaRutina.class);
-                startActivity(i);
+                startActivityForResult(i, RESPUESTA);
                 break;
             case R.id.rutinasBtn:
                 i = new Intent(this, MisRutinas.class);
                 startActivity(i);
                 break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RESPUESTA) {
+            if(resultCode == Activity.RESULT_OK){
+                Toast.makeText(this, data.getStringExtra("resultado"), Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }
