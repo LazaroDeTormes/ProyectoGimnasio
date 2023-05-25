@@ -37,6 +37,40 @@ public class PrevRutina extends AppCompatActivity {
 
         dia = i.getStringExtra("dia");
 
+        switch (dia){
+            case "monday":
+            case "luns":
+                dia= "lunes";
+                break;
+            case "tuesday":
+            case "martes":
+                dia= "martes";
+                break;
+            case "wednesday":
+            case "mércores":
+                dia= "miércoles";
+                break;
+            case "thursday":
+            case "xoves":
+                dia= "jueves";
+                break;
+            case "friday":
+            case "venres":
+                dia= "viernes";
+                break;
+            case "saturday":
+            case "sábado":
+                dia= "sábado";
+                break;
+            case "sunday":
+            case "domingo":
+                dia= "domingo";
+                break;
+
+        }
+
+        System.out.println(dia);
+
         dbh = new DBHelper(this);
 
         rutina = dbh.getRutinaPorDia(dia);

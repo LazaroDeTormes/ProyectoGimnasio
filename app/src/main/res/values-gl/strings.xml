@@ -20,4 +20,6 @@
     <string name="busca">Busca un exercicio…</string>
     <string name="ejercicioEnRutina">Xa puxeches este exercicio neste día.</string>
     <string name="rutinaActualizada">Rutina actualizada!</string>
+    <string name="personalizar">Personalizar</string>
+    <string name="acercade">Acerca de…</string>
 </resources>
