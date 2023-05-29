@@ -53,6 +53,37 @@ public class CreaRutina extends AppCompatActivity {
             public void onClick(View v) {
 
                 String rutdia = dia.getSelectedItem().toString();
+                switch (rutdia){
+                    case "monday":
+                    case "luns":
+                        rutdia= "lunes";
+                        break;
+                    case "tuesday":
+                    case "martes":
+                        rutdia= "martes";
+                        break;
+                    case "wednesday":
+                    case "mércores":
+                        rutdia= "miércoles";
+                        break;
+                    case "thursday":
+                    case "xoves":
+                        rutdia= "jueves";
+                        break;
+                    case "friday":
+                    case "venres":
+                        rutdia= "viernes";
+                        break;
+                    case "saturday":
+                    case "sábado":
+                        rutdia= "sábado";
+                        break;
+                    case "sunday":
+                    case "domingo":
+                        rutdia= "domingo";
+                        break;
+
+                }
                 System.out.println(listaRutina.getAdapter().getCount());
                 for (int i = 0; i < listaRutina.getAdapter().getCount(); i++){
                     boolean switchState =  adapter.getSwitchState(i);

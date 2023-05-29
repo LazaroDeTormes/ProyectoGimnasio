@@ -25,10 +25,14 @@
     <string name="crea_rutina">Create a rutine</string>
     <string name="mis_rutinas">My rutines</string>
 
-    <string name="busca">Search an exercice...</string>
+    <string name="busca">Search an exercice…</string>
 
     <string name="ejercicioEnRutina">You have already setted this exercise in this day.</string>
 
     <string name="rutinaActualizada">Rutine updated!</string>
+
+    <string name="personalizar">Customize</string>
+
+    <string name="acercade">About…</string>
 
 </resources>
