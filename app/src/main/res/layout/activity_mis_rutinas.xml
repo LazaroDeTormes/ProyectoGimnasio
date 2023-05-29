@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -11,89 +12,92 @@
         android:background="@color/color1"
         android:layout_margin="10dp">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:visibility="visible"
-            android:background="@color/white"
-            android:layout_margin="5dp">
-
-
-            <Button
-                android:id="@+id/rutinaLunes"
+            android:layout_height="match_parent">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dia1"
-                android:textSize="20dp"
-                android:layout_marginHorizontal="20dp"
-                android:padding="20dp"
-                android:backgroundTint="@color/color1"/>
-
-            <Button
-                android:id="@+id/rutinaMartes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dia2"
-                android:textSize="20dp"
-                android:layout_marginHorizontal="20dp"
-                android:padding="20dp"
-                android:backgroundTint="@color/color1"/>
-
-            <Button
-                android:id="@+id/rutinaMiercoles"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dia3"
-                android:textSize="20dp"
-                android:layout_marginHorizontal="20dp"
-                android:padding="20dp"
-                android:backgroundTint="@color/color1"/>
-
-            <Button
-                android:id="@+id/rutinaJueves"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dia4"
-                android:textSize="20dp"
-                android:layout_marginHorizontal="20dp"
-                android:padding="20dp"
-                android:backgroundTint="@color/color1"/>
-
-            <Button
-                android:id="@+id/rutinaViernes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dia5"
-                android:textSize="20dp"
-                android:layout_marginHorizontal="20dp"
-                android:padding="20dp"
-                android:backgroundTint="@color/color1"/>
-            <Button
-                android:id="@+id/rutinaSabado"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dia6"
-                android:textSize="20dp"
-                android:layout_marginHorizontal="20dp"
-                android:padding="20dp"
-                android:backgroundTint="@color/color1"/>
-
-            <Button
-                android:id="@+id/rutinaDomingo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/dia7"
-                android:textSize="20dp"
-                android:layout_marginHorizontal="20dp"
-                android:padding="20dp"
-                android:backgroundTint="@color/color1"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="visible"
+                android:background="@color/white"
+                android:layout_margin="5dp">
 
 
+                <Button
+                    android:id="@+id/rutinaLunes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dia1"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:padding="20dp"
+                    android:backgroundTint="@color/color1"/>
+
+                <Button
+                    android:id="@+id/rutinaMartes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dia2"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:padding="20dp"
+                    android:backgroundTint="@color/color1"/>
+
+                <Button
+                    android:id="@+id/rutinaMiercoles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dia3"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:padding="20dp"
+                    android:backgroundTint="@color/color1"/>
+
+                <Button
+                    android:id="@+id/rutinaJueves"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dia4"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:padding="20dp"
+                    android:backgroundTint="@color/color1"/>
+
+                <Button
+                    android:id="@+id/rutinaViernes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dia5"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:padding="20dp"
+                    android:backgroundTint="@color/color1"/>
+                <Button
+                    android:id="@+id/rutinaSabado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dia6"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:padding="20dp"
+                    android:backgroundTint="@color/color1"/>
+
+                <Button
+                    android:id="@+id/rutinaDomingo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dia7"
+                    android:textSize="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:padding="20dp"
+                    android:backgroundTint="@color/color1"/>
 
 
 
-        </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 </LinearLayout>
