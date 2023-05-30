@@ -20,6 +20,10 @@
     <string name="busca">Busca un ejercicio…</string>
     <string name="ejercicioEnRutina">Ya has puesto este ejercicio en este día.</string>
     <string name="rutinaActualizada">¡Rutina actualizada!</string>
-    <string name="personalizar">Personalizar</string>
-    <string name="acercade">Acerca de…</string>
+    <string name="texto">Personalizar saludo</string>
+    <string name="botones">Personalizar botones</string>
+    <string name="notificacion">¡A entrenar!</string>
+    <string name="modif_saludo">Edita el saludo</string>
+    <string name="atras">Cancelar</string>
+    <string name="guardar_color">Guardar</string>
 </resources>

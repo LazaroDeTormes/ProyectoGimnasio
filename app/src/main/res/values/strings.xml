@@ -31,8 +31,16 @@
 
     <string name="rutinaActualizada">Rutine updated!</string>
 
-    <string name="personalizar">Customize</string>
+    <string name="texto">Customize salute</string>
 
-    <string name="acercade">About…</string>
+    <string name="botones">Customize buttons</string>
+
+    <string name="notificacion">Let\'s train!</string>
+
+    <string name="modif_saludo">Edit the salute</string>
+
+    <string name="atras">Cancel</string>
+
+    <string name="guardar_color">Save</string>
 
 </resources>
