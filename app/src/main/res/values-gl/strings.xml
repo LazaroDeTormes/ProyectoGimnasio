@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProyectoGimnasio</string>
+    <string name="app_name">RutinasXtremas</string>
     <string name="grupo_estir">Todos</string>
     <string name="dia1">luns</string>
     <string name="dia2">martes</string>
@@ -26,4 +26,6 @@
     <string name="modif_saludo">Edita o saúdo</string>
     <string name="atras">Cancelar</string>
     <string name="guardar_color">Gardar</string>
+    <string name="crono">Cronómetro</string>
+    <string name="navegador">Busca información</string>
 </resources>

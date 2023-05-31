@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProyectoGimnasio</string>
+    <string name="app_name">RutinasXtremas</string>
 
     <string name="grupo_estir">All</string>
 
@@ -42,5 +42,9 @@
     <string name="atras">Cancel</string>
 
     <string name="guardar_color">Save</string>
+
+    <string name="crono">Chronometer</string>
+
+    <string name="navegador">Search information</string>
 
 </resources>

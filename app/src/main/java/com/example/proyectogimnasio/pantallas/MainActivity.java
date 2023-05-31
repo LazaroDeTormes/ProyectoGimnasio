@@ -3,6 +3,7 @@ package com.example.proyectogimnasio.pantallas;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Notification;
@@ -13,11 +14,14 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.AlarmClock;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -25,6 +29,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -41,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView saludo;
     private Notification.Builder builder;
     private LinearLayout pantallaPrincipal, pantBot;
-    private Button btnRH, btnEj, btnEs, btnCR, btnRu;
+    private Button btnRH, btnEj, btnEs, btnCR, btnRu, btnCrono, btnNavegador;
     private AlertDialog.Builder ventana;
     private EditText nombre;
     private int color;
@@ -49,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int NOTIF_ALERTA_ID = 2;
     private static final int RESPUESTA_COLOR = 3;
     private static final String CHANNEL_ID = "4";
+    private static final int CRONOMETRO = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,18 +72,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnRu = findViewById(R.id.rutinasBtn);
         saludo = findViewById(R.id.saludo);
         color = getResources().getColor(R.color.color1);
+        btnCrono = findViewById(R.id.cronoBtn);
+        btnNavegador = findViewById(R.id.navegadorBtn);
 
 
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Notificación";
+            String description = "Canal para notificaciones sencillas";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
 
+            NotificationChannel channel = new
+                    NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
 
-        builder = new Notification.Builder(this);
+            NotificationManager nm = (NotificationManager)
+                    getSystemService(Context.NOTIFICATION_SERVICE);
+            nm.createNotificationChannel(channel);
+
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            builder = new Notification.Builder(this, CHANNEL_ID);
+        } else {
+            builder = new Notification.Builder(this);
+        }
+
         builder.setSmallIcon(R.drawable.icono);
         builder.setTicker(getString(R.string.notificacion));
         builder.setContentTitle(getString(R.string.notificacion));
         Bitmap largeIcon= BitmapFactory.decodeResource(getResources(),R.drawable.icono);
         builder.setLargeIcon(largeIcon);
-
         Intent i = new Intent(this, RutinaHoy.class);
         PendingIntent pi;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -87,26 +112,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             pi = PendingIntent.getActivity(this, 0, i, 0);
         }
         builder.setContentIntent(pi);
-
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "Notificaciones básicas";
-            String description = "Canal para notificaciones sencillas";
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-
-            NotificationChannel channel = new
-                    NotificationChannel(CHANNEL_ID, name, importance);
-            if  (channel==null){
-                channel.enableVibration(false);
-            }
-            channel.setDescription(description);
-
-            NotificationManager nm = (NotificationManager)
-                    getSystemService(Context.NOTIFICATION_SERVICE);
-            nm.createNotificationChannel(channel);
-
-        }
-
         NotificationManager nm = (NotificationManager)
                 getSystemService(Context.NOTIFICATION_SERVICE);
         Notification notificacion=builder.build();
@@ -136,6 +141,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnEs.setOnClickListener(this);
         btnCR.setOnClickListener(this);
         btnRH.setOnClickListener(this);
+        btnCrono.setOnClickListener(this);
+        btnNavegador.setOnClickListener(this);
 
         cargar();
     }
@@ -227,6 +234,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 i = new Intent(this, MisRutinas.class);
                 startActivity(i);
                 break;
+            case R.id.cronoBtn:
+                i = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
+                startActivity(i);
+
+                break;
+            case R.id.navegadorBtn:
+                i = new Intent();
+                i.setAction(Intent.ACTION_VIEW);
+                i.setData(Uri.parse("https://google.com"));
+                this.startActivity(i);
+                break;
+
+
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode==CRONOMETRO){
+
+            if(grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                //permiso concedido
+            }
+            else {
+                //permiso denegado
+            }
         }
     }
 
