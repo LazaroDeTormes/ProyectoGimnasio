@@ -1,22 +1,32 @@
 package com.example.proyectogimnasio.pantallas;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 
 import com.example.proyectogimnasio.R;
+import com.example.proyectogimnasio.db.DBHelper;
 
-public class MisRutinas extends AppCompatActivity  implements View.OnClickListener {
+public class MisRutinas extends AppCompatActivity  implements View.OnClickListener{
 
     private Button lun, mar, mie, jue, vie, sab, dom;
+    private String nombre;
+    private DBHelper dbh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mis_rutinas);
+
+        dbh = new DBHelper(this);
 
         lun = findViewById(R.id.rutinaLunes);
         mar = findViewById(R.id.rutinaMartes);
@@ -34,12 +44,67 @@ public class MisRutinas extends AppCompatActivity  implements View.OnClickListen
         sab.setOnClickListener(this);
         dom.setOnClickListener(this);
 
+
+        registerForContextMenu(lun);
+        registerForContextMenu(mar);
+        registerForContextMenu(mie);
+        registerForContextMenu(jue);
+        registerForContextMenu(vie);
+        registerForContextMenu(sab);
+        registerForContextMenu(dom);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        MenuInflater inflador = getMenuInflater();
+        inflador.inflate(R.menu.borrarmenu, menu);
+
+        switch (v.getId()){
+            case R.id.rutinaLunes:
+                nombre=lun.getText().toString();
+                break;
+            case R.id.rutinaMartes:
+                nombre=lun.getText().toString();
+                break;
+            case R.id.rutinaMiercoles:
+                nombre=lun.getText().toString();
+                break;
+            case R.id.rutinaJueves:
+                nombre=lun.getText().toString();
+                break;
+            case R.id.rutinaViernes:
+                nombre=lun.getText().toString();
+                break;
+            case R.id.rutinaSabado:
+                nombre=lun.getText().toString();
+                break;
+            case R.id.rutinaDomingo:
+                nombre=lun.getText().toString();
+                break;
+
+        }
+
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+
+
+        switch (item.getItemId()){
+            case R.id.borradomenu:
+                dbh.borrarRutina(nombre);
+        }
+
+        return super.onContextItemSelected(item);
     }
 
     @Override
     public void onClick(View v) {
         Intent i;
         Bundle b;
+
         switch (v.getId()){
             case R.id.rutinaLunes:
                 i = new Intent(this, PrevRutina.class);
@@ -103,4 +168,6 @@ public class MisRutinas extends AppCompatActivity  implements View.OnClickListen
 
         }
     }
+
+
 }

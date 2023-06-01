@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RutinasXtremas</string>
+    <string name="app_name">RutinasXtremasc</string>
     <string name="grupo_estir">Todos</string>
     <string name="dia1">lunes</string>
     <string name="dia2">martes</string>
@@ -28,4 +28,5 @@
     <string name="guardar_color">Guardar</string>
     <string name="crono">Cronómetro</string>
     <string name="navegador">Busca información</string>
+    <string name="borrarrutina">Borrar rutina</string>
 </resources>

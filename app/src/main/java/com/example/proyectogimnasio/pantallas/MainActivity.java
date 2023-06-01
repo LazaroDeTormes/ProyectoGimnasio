@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
+
         imgTitulo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

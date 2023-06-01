@@ -47,4 +47,6 @@
 
     <string name="navegador">Search information</string>
 
+    <string name="borrarrutina">Delete rutine</string>
+
 </resources>

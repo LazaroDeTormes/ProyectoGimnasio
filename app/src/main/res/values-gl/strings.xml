@@ -28,4 +28,5 @@
     <string name="guardar_color">Gardar</string>
     <string name="crono">Cronómetro</string>
     <string name="navegador">Busca información</string>
+    <string name="borrarrutina">Borrar rutina</string>
 </resources>

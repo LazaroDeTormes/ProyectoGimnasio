@@ -215,6 +215,11 @@ public class DBHelper extends SQLiteAssetHelper {
         bbdd.insert("rutinas",null, nuevoEjer);
     }
 
+    public void borrarRutina(String dia){
+        SQLiteDatabase bbdd = getWritableDatabase();
+        bbdd.delete("rutinas", "dia='"+dia+"'",null);
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         super.onUpgrade(db, oldVersion, newVersion);
